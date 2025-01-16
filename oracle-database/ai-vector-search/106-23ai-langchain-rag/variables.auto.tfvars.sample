@@ -1,0 +1,6 @@
+region              = ""
+compartment_ocid    = ""
+prefix              = ""
+ssh_authorized_keys = ""
+contact_email       = ""
+adb_admin_password  = ""
