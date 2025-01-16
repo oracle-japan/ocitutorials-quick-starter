@@ -134,6 +134,7 @@ resource "oci_core_subnet" "public_subnet" {
   display_name               = format("%s-public-subnet", var.prefix)
   route_table_id             = oci_core_default_route_table.public_route_table.id
   prohibit_public_ip_on_vnic = false
+  dns_label                  = local.dns_label.public
   freeform_tags              = local.freeform_tags
 }
 
@@ -147,5 +148,6 @@ resource "oci_core_subnet" "private_subnet" {
   ]
   display_name   = format("%s-private-subnet", var.prefix)
   route_table_id = oci_core_route_table.private_route_table.id
+  dns_label      = local.dns_label.private
   freeform_tags  = local.freeform_tags
 }
