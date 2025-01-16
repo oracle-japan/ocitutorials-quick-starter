@@ -14,5 +14,5 @@ resource "oci_database_autonomous_database" "adp" {
     email = var.contact_email
   }
   freeform_tags = local.freeform_tags
-  subnet_id     = oci_core_subnet.private_subnet.id
+  subnet_id     = oci_core_subnet.public_subnet.id
 }
