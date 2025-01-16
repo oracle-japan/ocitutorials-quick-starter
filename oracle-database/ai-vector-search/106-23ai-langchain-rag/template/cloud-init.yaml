@@ -5,4 +5,4 @@ packages:
   - git
   - python3.11
 runcmd:
-  - ln -s /usr/bin/python3.11 /usr/bin/python
+  - ln -s -f /usr/bin/python3.11 /usr/bin/python
