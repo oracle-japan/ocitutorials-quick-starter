@@ -1,4 +1,5 @@
 resource "oci_core_instance" "instance" {
+  count               = var.attendee
   availability_domain = local.ad
   compartment_id      = var.compartment_ocid
   source_details {
@@ -10,7 +11,7 @@ resource "oci_core_instance" "instance" {
     ocpus         = 1
     memory_in_gbs = 16
   }
-  display_name = format("%s-instance", var.prefix)
+  display_name = format("%s-instance-%s", var.prefix, count.index + 1)
   create_vnic_details {
     assign_public_ip          = true
     assign_private_dns_record = false

@@ -1,7 +1,8 @@
 resource "oci_database_autonomous_database" "adp" {
+  count                               = var.attendee
   compartment_id                      = var.compartment_ocid
-  display_name                        = format("%s-atp", var.prefix)
-  db_name                             = format("%satp", var.prefix)
+  display_name                        = format("%s-atp-%s", var.prefix, count.index + 1)
+  db_name                             = format("%satp%s", var.prefix, count.index + 1)
   db_workload                         = "OLTP"
   db_version                          = "23ai"
   compute_count                       = "2"

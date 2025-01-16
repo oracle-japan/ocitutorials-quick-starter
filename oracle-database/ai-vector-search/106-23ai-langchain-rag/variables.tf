@@ -10,6 +10,11 @@ variable "prefix" {
   description = "作成されるリソースに付与する接頭辞"
 }
 
+variable "attendee" {
+  default = 1
+  description = "参加者数"
+}
+
 variable "ssh_authorized_keys" {
   description = "SSH用の公開鍵"
 }

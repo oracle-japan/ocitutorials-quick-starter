@@ -1,6 +1,7 @@
 region              = ""
 compartment_ocid    = ""
 prefix              = ""
+attendee            = 1
 ssh_authorized_keys = ""
 contact_email       = ""
 adb_admin_password  = ""
