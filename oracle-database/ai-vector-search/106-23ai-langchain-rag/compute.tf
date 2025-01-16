@@ -19,7 +19,7 @@ resource "oci_core_instance" "instance" {
   }
   metadata = {
     ssh_authorized_keys = var.ssh_authorized_keys
-    user_data = base64encode(templatefile("./template/cloud-init.yaml"))
+    user_data = base64encode(file("./template/cloud-init.yaml"))
   }
   freeform_tags = local.freeform_tags
 }
