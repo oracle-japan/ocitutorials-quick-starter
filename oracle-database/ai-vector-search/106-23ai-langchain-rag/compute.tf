@@ -18,9 +18,8 @@ resource "oci_core_instance" "instance" {
     subnet_id                 = oci_core_subnet.public_subnet.id
   }
   metadata = {
-    user_data = base64encode(templatefile("./template/cloud-init.yaml", {
-      ssh_authorized_keys = var.ssh_authorized_keys
-    }))
+    ssh_authorized_keys = var.ssh_authorized_keys
+    user_data = base64encode(templatefile("./template/cloud-init.yaml"))
   }
   freeform_tags = local.freeform_tags
 }

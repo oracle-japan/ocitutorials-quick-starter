@@ -1,27 +1,8 @@
 #cloud-config
-users:
-  - default
-  - name: opc
-    ssh_authorized_keys: ${ssh_authorized_keys}
-system_info:
-  default_user:
-    name: default-user
-    lock_passwd: false
-    sudo: ALL=(ALL) NOPASSWD:ALL
-ssh_pwauth: no
-random_seed:
-  file: /dev/urandom
-  command: ["pollinate", "-r", "-s", "https://entropy.ubuntu.com"]
-  command_required: true
 package_upgrade: true
 packages:
-  - curl
   - vim
   - git
-  - unzip
-  - gnupg
-  - lsb-release
-  - ca-certificates
-  - dstat
   - python3.11
 runcmd:
+  - ln -s /usr/bin/python3.11 /usr/bin/python
