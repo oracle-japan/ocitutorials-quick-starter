@@ -1,3 +1,5 @@
 .terraform/
 *.auto.tfvars
 ssh-key/
+terraform.tfstate
+terraform.tfstate.backup
