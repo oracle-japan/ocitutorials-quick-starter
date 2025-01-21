@@ -4,5 +4,7 @@ packages:
   - vim
   - git
   - python3.11
+  - oraclelinux-developer-release-el9
+  - python39-oci-cli
 runcmd:
   - ln -s -f /usr/bin/python3.11 /usr/bin/python
