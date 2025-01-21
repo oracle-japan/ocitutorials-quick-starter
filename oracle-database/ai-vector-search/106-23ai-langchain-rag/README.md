@@ -26,5 +26,9 @@ adb_admin_password  = "<ADBの管理者用パスワード>"
 Cloud Shell を用いて Terraform を実行します。
 
 ```sh
+# プロバイダーのダウンロード
+terraform init
+
+# リソースの作成
 terraform apply
 ```
