@@ -1,3 +1,4 @@
+tenancy_ocid        = ""
 region              = ""
 compartment_ocid    = ""
 prefix              = ""

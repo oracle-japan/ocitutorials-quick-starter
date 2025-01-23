@@ -1,3 +1,7 @@
+variable "tenancy_ocid" {
+  description = "テナンシーOCID"
+}
+
 variable "region" {
   description = "作成予定のリージョン"
 }
@@ -11,16 +15,12 @@ variable "prefix" {
 }
 
 variable "attendee" {
-  default = 1
+  default     = 1
   description = "参加者数"
 }
 
 variable "ssh_authorized_keys" {
   description = "SSH用の公開鍵"
-}
-
-variable "contact_email" {
-  description = "ADB通知用メールアドレス"
 }
 
 variable "adb_admin_password" {

@@ -11,13 +11,9 @@ resource "oci_database_autonomous_database" "adp" {
   data_storage_size_in_tbs            = "1"
   is_auto_scaling_for_storage_enabled = "false"
   admin_password                      = local.adb_admin_password
-  customer_contacts {
-    email = var.contact_email
-  }
   freeform_tags = local.freeform_tags
   subnet_id                   = oci_core_subnet.public_subnet.id
   is_mtls_connection_required = false
-  is_access_control_enabled   = true
   whitelisted_ips = [
     oci_core_instance.instance[count.index].public_ip
   ]
