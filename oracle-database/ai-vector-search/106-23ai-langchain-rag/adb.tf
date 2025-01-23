@@ -15,5 +15,10 @@ resource "oci_database_autonomous_database" "adp" {
     email = var.contact_email
   }
   freeform_tags = local.freeform_tags
-  subnet_id     = oci_core_subnet.public_subnet.id
+  subnet_id                   = oci_core_subnet.public_subnet.id
+  is_mtls_connection_required = false
+  is_access_control_enabled   = true
+  whitelisted_ips = [
+    oci_core_instance.instance[count.index].public_ip
+  ]
 }
