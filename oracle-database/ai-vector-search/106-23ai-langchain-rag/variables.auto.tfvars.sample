@@ -4,4 +4,4 @@ prefix              = ""
 attendee            = 1
 ssh_authorized_keys = ""
 contact_email       = ""
-adb_admin_password  = ""
+adb_admin_password  = "ChangeMe!!12345"
