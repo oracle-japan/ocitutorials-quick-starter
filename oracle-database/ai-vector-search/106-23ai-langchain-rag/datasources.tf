@@ -1,3 +1,10 @@
+data "oci_identity_tenancy" "tenancy" {
+  tenancy_id = var.tenancy_ocid
+}
+
+data "oci_identity_regions" "regions" {
+}
+
 data "oci_core_services" "all_services" {
   filter {
     name   = "name"
