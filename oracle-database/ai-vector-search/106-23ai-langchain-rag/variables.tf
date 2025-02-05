@@ -27,3 +27,8 @@ variable "adb_admin_password" {
   description = "ADBの管理者用パスワード"
   sensitive   = true
 }
+
+variable "is_create_policy" {
+  default     = true
+  description = "Dynamic GroupおよびPolicyを作成するかどうか"
+}

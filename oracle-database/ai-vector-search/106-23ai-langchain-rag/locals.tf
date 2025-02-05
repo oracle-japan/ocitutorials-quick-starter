@@ -5,6 +5,11 @@ locals {
   }
 }
 
+##### IAM
+locals {
+  is_create_iam_resources = var.is_create_policy ? toset(["enabled"]) : toset([])
+}
+
 ##### Networks
 locals {
   cidr_block = {

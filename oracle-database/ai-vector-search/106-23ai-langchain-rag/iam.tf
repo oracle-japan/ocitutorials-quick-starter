@@ -1,5 +1,6 @@
 resource "oci_identity_dynamic_group" "ocitutorial_dynamic_group" {
   # Need to create home region.
+  for_each       = local.is_create_iam_resources
   provider       = oci.homeregion
   compartment_id = var.compartment_ocid
   description    = "Dynamic group for OCI Tutorials"
@@ -9,6 +10,7 @@ resource "oci_identity_dynamic_group" "ocitutorial_dynamic_group" {
 
 resource "oci_identity_policy" "ocitutorial_policy" {
   # Need to create home region.
+  for_each       = local.is_create_iam_resources
   provider       = oci.homeregion
   compartment_id = var.compartment_ocid
   description    = "IAM Policy for OCI Tutorials"
